@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pidl:description targetNamespace="urn:schemas-progress-com:bpm:appserverbinding:0001" serviceType="wsad:OEAppServerInvoke" xmlns:wsad="urn:schemas-progress-com:bpm:appserverbinding:0001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pidl="http://www.progress.com/caf/idl1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:java="http://www.progress.com/adapters/idl1.0/javatype">
+<pidl:types>
+</pidl:types>
+  <pidl:interface name="com.progress.openedge.pdt.bpminterfaces">
+    <pidl:operation name="Services.MovieService..addMovie" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="cName" req="false" type="java:String">
+    </pidl:input>
+      <pidl:input messageLabel="dReleaseDate" req="false" type="java:GregorianCalendar">
+    </pidl:input>
+      <pidl:input messageLabel="dRating" req="false" type="java:BigDecimal">
+    </pidl:input>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+    <pidl:operation name="Services.MovieService..deleteMovie" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="iMovieId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+    <pidl:operation name="Services.MovieService..getAllMovies" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:output messageLabel="ttGetAllMovies" req="false" type="java:Object">
+    </pidl:output>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+    <pidl:operation name="Services.MovieService..updateMovie" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="iMovieId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:input messageLabel="dsMovieSet" req="false" type="java:Object">
+    </pidl:input>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+  </pidl:interface>
+  <pidl:binding name="com.progress.openedge.pdt.bpmbindings" interface="wsad:com.progress.openedge.pdt.bpminterfaces" type="urn:schemas-progress-com:bpm:appserverbinding:0001">
+<wsad:Operation isPersistent="false" useFullName="false" executionMode="11">
+  <wsad:Name>Services.MovieService</wsad:Name>
+  <wsad:ProcPath/>
+  <wsad:ProPath/>
+  <wsad:ProcExt>cls</wsad:ProcExt>
+  <wsad:ProcDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="true" IsMappedToSubmit="false">
+    <wsad:Name>Services.MovieService</wsad:Name>
+    <wsad:HelpString></wsad:HelpString>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>addMovie</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>addMovie</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>cName</wsad:Name>
+          <wsad:OrigName>cName</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>dReleaseDate</wsad:Name>
+          <wsad:OrigName>dReleaseDate</wsad:OrigName>
+          <wsad:Type>2</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>dRating</wsad:Name>
+          <wsad:OrigName>dRating</wsad:OrigName>
+          <wsad:Type>5</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="4" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="5" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>deleteMovie</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>deleteMovie</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>iMovieId</wsad:Name>
+          <wsad:OrigName>iMovieId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>getAllMovies</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>getAllMovies</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>ttGetAllMovies</wsad:Name>
+          <wsad:OrigName>ttGetAllMovies</wsad:OrigName>
+          <wsad:Type>15</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+          <wsad:NamespaceUri xsi:nil="true"/>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>updateMovie</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>updateMovie</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>iMovieId</wsad:Name>
+          <wsad:OrigName>iMovieId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>dsMovieSet</wsad:Name>
+          <wsad:OrigName>dsMovieSet</wsad:OrigName>
+          <wsad:Type>36</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+          <wsad:DataSetMetaData>
+            <wsad:NamespaceUri xsi:nil="true"/>
+            <wsad:DataTable Name="ttUpdateMovie" hasBeforeTable="false"/>
+          </wsad:DataSetMetaData>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="4" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+  </wsad:ProcDetail>
+</wsad:Operation>
+  </pidl:binding>
+</pidl:description>

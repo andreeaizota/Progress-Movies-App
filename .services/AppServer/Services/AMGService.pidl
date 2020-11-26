@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pidl:description targetNamespace="urn:schemas-progress-com:bpm:appserverbinding:0001" serviceType="wsad:OEAppServerInvoke" xmlns:wsad="urn:schemas-progress-com:bpm:appserverbinding:0001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pidl="http://www.progress.com/caf/idl1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:java="http://www.progress.com/adapters/idl1.0/javatype">
+<pidl:types>
+</pidl:types>
+  <pidl:interface name="com.progress.openedge.pdt.bpminterfaces">
+    <pidl:operation name="Services.AMGService..addAMG" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="iMovieId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:input messageLabel="iGenreId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+    <pidl:operation name="Services.AMGService..deleteAMG" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="iAMGId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+    <pidl:operation name="Services.AMGService..getAllAMGs" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:output messageLabel="ttGetAllAMGs" req="false" type="java:Object">
+    </pidl:output>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+    <pidl:operation name="Services.AMGService..updateAMG" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="iAMGId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:input messageLabel="dsAMGSet" req="false" type="java:Object">
+    </pidl:input>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
+  </pidl:interface>
+  <pidl:binding name="com.progress.openedge.pdt.bpmbindings" interface="wsad:com.progress.openedge.pdt.bpminterfaces" type="urn:schemas-progress-com:bpm:appserverbinding:0001">
+<wsad:Operation isPersistent="false" useFullName="false" executionMode="11">
+  <wsad:Name>Services.AMGService</wsad:Name>
+  <wsad:ProcPath/>
+  <wsad:ProPath/>
+  <wsad:ProcExt>cls</wsad:ProcExt>
+  <wsad:ProcDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="true" IsMappedToSubmit="false">
+    <wsad:Name>Services.AMGService</wsad:Name>
+    <wsad:HelpString></wsad:HelpString>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>addAMG</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>addAMG</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>iMovieId</wsad:Name>
+          <wsad:OrigName>iMovieId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>iGenreId</wsad:Name>
+          <wsad:OrigName>iGenreId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="4" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>deleteAMG</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>deleteAMG</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>iAMGId</wsad:Name>
+          <wsad:OrigName>iAMGId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>getAllAMGs</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>getAllAMGs</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>ttGetAllAMGs</wsad:Name>
+          <wsad:OrigName>ttGetAllAMGs</wsad:OrigName>
+          <wsad:Type>15</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+          <wsad:NamespaceUri xsi:nil="true"/>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>updateAMG</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>updateAMG</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>iAMGId</wsad:Name>
+          <wsad:OrigName>iAMGId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>dsAMGSet</wsad:Name>
+          <wsad:OrigName>dsAMGSet</wsad:OrigName>
+          <wsad:Type>36</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+          <wsad:DataSetMetaData>
+            <wsad:NamespaceUri xsi:nil="true"/>
+            <wsad:DataTable Name="ttUpdateAMG" hasBeforeTable="false"/>
+          </wsad:DataSetMetaData>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="4" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+  </wsad:ProcDetail>
+</wsad:Operation>
+  </pidl:binding>
+</pidl:description>

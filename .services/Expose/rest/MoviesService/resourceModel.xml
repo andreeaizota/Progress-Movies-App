@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prgs:model xmlns:prgs="http://www.progress.com/caf/camel/component/prgrs" id="resourceModel">
+  <prgs:resource consumes="application/json" name="_actors_getAllActors" path="/actors" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ActorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ActorService..getAllActors" produces="application/json" verb="GET"/>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ActorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ActorService..addActor" produces="application/json" verb="POST"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_actors_id" path="/actors/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ActorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ActorService..deleteActor" produces="application/json" verb="DELETE">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ActorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ActorService..updateActor" produces="application/json" verb="PUT">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_movies_id" path="/movies/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/MovieService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.MovieService..deleteMovie" produces="application/json" verb="DELETE">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/MovieService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.MovieService..updateMovie" produces="application/json" verb="PUT">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_movies" path="/movies" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/MovieService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.MovieService..getAllMovies" produces="application/json" verb="GET"/>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/MovieService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.MovieService..addMovie" produces="application/json" verb="POST"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_directors_id" path="/directors/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/DirectorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.DirectorService..deleteDirector" produces="application/json" verb="DELETE">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/DirectorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.DirectorService..updateDirector" produces="application/json" verb="PUT">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_directors" path="/directors" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/DirectorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.DirectorService..getAllDirectors" produces="application/json" verb="GET"/>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/DirectorService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.DirectorService..addDirector" produces="application/json" verb="POST"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_reviews_id" path="/reviews/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ReviewService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ReviewService..updateReview" produces="application/json" verb="PUT">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ReviewService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ReviewService..deleteReview" produces="application/json" verb="DELETE">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_reviews" path="/reviews" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ReviewService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ReviewService..getAllReviews" produces="application/json" verb="GET"/>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/ReviewService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.ReviewService..addReview" produces="application/json" verb="POST"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_genres_id" path="/genres/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/GenreService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.GenreService..deleteGenre" produces="application/json" verb="DELETE">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/GenreService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.GenreService..updateGenre" produces="application/json" verb="PUT">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_genres" path="/genres" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/GenreService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.GenreService..getAllGenres" produces="application/json" verb="GET"/>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/GenreService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.GenreService..addGenre" produces="application/json" verb="POST"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_roles" path="/roles" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/RoleService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.RoleService..getAllRoles" produces="application/json" verb="GET"/>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/RoleService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.RoleService..addRole" produces="application/json" verb="POST"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_roles_id" path="/roles/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/RoleService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.RoleService..deleteRole" produces="application/json" verb="DELETE">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/Services/RoleService.pidl::com.progress.openedge.pdt.bpmbindings" name="Services.RoleService..updateRole" produces="application/json" verb="PUT">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_home_recentMovies" path="/home/recentMovies" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/HomePageBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.HomePageBusiness..getWhatsNew" produces="application/json" verb="GET"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_home_fanFavorites" path="/home/fanFavorites" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/HomePageBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.HomePageBusiness..getFanFavorites" produces="application/json" verb="GET"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_home_whatToWatch" path="/home/whatToWatch" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/HomePageBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.HomePageBusiness..getWhatToWatch" produces="application/json" verb="GET"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_home_celebs" path="/home/celebs" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/HomePageBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.HomePageBusiness..getCelebitries" produces="application/json" verb="GET"/>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_search" path="/search/{name}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/SearchMovieBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.SearchMovieBusiness..searchMovies" produces="application/json" verb="GET">
+      <prgs:param name="name" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_search_1" path="/filterMovies" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/SearchMovieBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.SearchMovieBusiness..filterMovies" produces="application/json" verb="GET">
+      <prgs:param name="cRatingInterval" type="QUERY"/>
+      <prgs:param name="cGenres" type="QUERY"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_searchActors" path="/searchActors" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/SearchActorBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.SearchActorBusiness..searchActors" produces="application/json" verb="GET">
+      <prgs:param name="cSearchCondition" type="QUERY"/>
+      <prgs:param name="cValue" type="QUERY"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_addReviewToMovie_id" path="/addReviewToMovie" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/MoviePageBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.MoviePageBusiness..addReviewToMovie" produces="application/json" verb="POST"/>
+  </prgs:resource>
+</prgs:model>

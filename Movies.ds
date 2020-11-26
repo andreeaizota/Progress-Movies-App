@@ -1,0 +1,19 @@
+Error File      Input File              # of Records Read      # of Errors
+-------------------------------------------------------------------------
+
+-               C:\temp\actor.                   4                  0
+
+-               C:\temp\amd.d                    0                  0
+
+-               C:\temp\amg.d                    0                  0
+
+-               C:\temp\direct                   1                  0
+
+-               C:\temp\genre.                   4                  0
+
+-               C:\temp\movie.                   1                  0
+
+-               C:\temp\review                   1                  0
+
+-               C:\temp\role.d                   0                  0
+

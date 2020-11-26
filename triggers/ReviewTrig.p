@@ -1,0 +1,2 @@
+TRIGGER PROCEDURE FOR CREATE OF Review.
+ASSIGN Review.ReviewId = NEXT-VALUE(NextReviewId).
