@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(
+                function() {			
+                    $.get("http://localhost:8080/Movies/rest/MoviesService/home/recentMovies", function(data, status){
+                        for(let movie of data.response.ttRecentMovies.ttRecentMovies) {
+                                        $("#newMoviesList").append(
+                                            `<li><b> 
+                                                    ${movie.Name} </b> <br/> 
+                                                    <a>
+                                                    Release Date: ${movie.ReleaseDate} <br/> 
+                                                    Rating: ${movie.Rating} </a></li>`
+                                        );
+                                    }
+                    });
+
+                    $.get("http://localhost:8080/Movies/rest/MoviesService/home/fanFavorites", function(data, status){
+                        for(let movie of data.response.ttFavoritesMovies.ttFavoritesMovies) {
+                                        $("#favoriteMoviesList").append(
+                                            `<li><b> 
+                                                    ${movie.Name} </b> <br/> 
+                                                    <a>
+                                                    Release Date: ${movie.ReleaseDate} <br/> 
+                                                    Rating: ${movie.Rating} </a></li>`
+                                        );
+                                    }
+                    });
+
+                    $.get("http://localhost:8080/Movies/rest/MoviesService/home/whatToWatch", function(data, status){
+                        for(let movie of data.response.ttGetAllMovies.ttGetAllMovies) {
+                                        $("#allMoviesList").append(
+                                            `<li><b> 
+                                                    ${movie.Name} </b> <br/> 
+                                                    <a>
+                                                    Release Date: ${movie.ReleaseDate} <br/> 
+                                                    Rating: ${movie.Rating} </a></li>`
+                                        );
+                                    }
+                    });
+
+                    $.get("http://localhost:8080/Movies/rest/MoviesService/home/celebs", function(data, status){
+                        for(let celeb of data.response.ttGetAllActors.ttGetAllActors) {
+                                        $("#celebsList").append(
+                                            `<li><b> 
+                                                    ${celeb.FirstName} ${celeb.LastName}</b> <br/> 
+                                                    <a>
+                                                    ${celeb.Age} years, ${celeb.Gender} </a></li>`
+                                        );
+                                    }
+                    });
+                }
+            )
+        </script>
+
+        <style>
+            .header h1 {
+                padding: 30px;
+                text-align: center;
+                background: #a13636;
+                color: rgb(0, 0, 0);
+                font-family: "Karma", sans-serif;
+                font-size: 50px;
+            }
+            .header img {
+                float: left;
+                width: 118px;
+                height: 118px;
+                background: #a13636;
+            }
+            .subtitle1 {
+                padding: 5px;
+                text-align: left;
+                background: #000000;
+                color: #a13636;
+                font-size: 20px;
+            }
+            .subtitle2 {
+                padding: 5px;
+                text-align: left;
+                background:#a13636;
+                color: rgb(0, 0, 0);
+                font-size: 20px;
+            }
+            .subtitle1 img, .subtitle2 img{
+                float: left;
+                width: 100px;
+                height: 100px;
+                background: rgb(0, 0, 0);
+            }
+            .subtitle2 img{
+                background: #a13636;
+            }
+            .tableMovies {
+                display: table;  
+                margin: 0 auto;
+                text-align: center;
+                overflow-x: auto;
+                display: flex;                
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333333;
+                flex: 0 0 auto;
+                text-align: center;
+            }
+
+            li {
+                float: left; 
+            }
+
+            li a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+            }
+
+            li b {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 24px;
+            }
+
+            li b:hover {
+                background-color: #111111;
+            }
+            body, h1, h2, h3 {
+                font-family: "Karma", sans-serif;
+            }
+            body {
+                background-color: #333333;
+            }
+
+            input[type=text] {
+                width: 200px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                background-color: white;
+                background-image: url('searchicon.png');
+                background-position: 10px 10px; 
+                background-repeat: no-repeat;
+                padding: 12px 20px 12px 40px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+            input[type=text]:focus {
+                width: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="header"> 
+            <img src="cinema.png" alt="logo" />
+            <h1>Filmscope</h1>
+        </div>
+
+        <form>
+            <input type="text" name="search" placeholder="Search movies">
+            <input type="text" name="search" placeholder="Search actors">
+        </form>
+        </br>
+
+        <div class = "subtitle1">
+            <img src="clapperboard.png" alt="logo" />
+            <h1>What's new</h1>
+        </div>
+        <div class="tableMovies">
+            <ul id="newMoviesList"></ul>
+        </div>
+        <br/>
+        <div class = "subtitle2">
+            <img src="rating.png" alt="logo" />
+            <h1>Fan favorites</h1>
+        </div>
+        <div class="tableMovies">
+            <ul id="favoriteMoviesList"></ul>
+        </div>
+        <br/>
+        <div class = "subtitle1">
+            <img src="watching.png" alt="logo" />
+            <h1>What to watch</h1>
+        </div>
+        <div class="tableMovies">
+            <ul id="allMoviesList"></ul>
+        </div>
+        <br/>
+        <div class = "subtitle2">
+            <img src="employees.png" alt="logo" />
+            <h1>Celebs</h1>
+        </div>
+        <div class="tableMovies">
+            <ul id="celebsList"></ul>
+        </div>
+        <br/>
+    </body>
+</html>
