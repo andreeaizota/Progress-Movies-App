@@ -25,6 +25,15 @@ class DataAccess.ActorDataAccess:
     define temp-table ttByNameActors like Actor.
     define temp-table ttByMovieActors like Actor.
     define temp-table ttByRoleActors like Actor.
+    define temp-table ttInfoActor like Actor.
+    define temp-table ttMoviesActor like Movie.
+    define temp-table ttRolesActor like Role.
+    
+    define dataset dsInfoActor for ttInfoActor, ttMoviesActor, ttRolesActor
+        data-relation ActorRole for ttInfoActor, ttRolesActor
+        relation-fields (ActorId, ActorId) nested
+        data-relation RoleMovie for ttRolesActor, ttMoviesActor
+        relation-fields (MovieId, MovieId) nested.
     
         
     /* Default constructor */
@@ -40,6 +49,9 @@ class DataAccess.ActorDataAccess:
         empty temp-table ttByNameActors.
         empty temp-table ttByMovieActors.
         empty temp-table ttByRoleActors.
+        empty temp-table ttInfoActor.
+        empty temp-table ttMoviesActor.
+        empty temp-table ttRolesActor.
     end destructor.
     
     
@@ -156,6 +168,49 @@ class DataAccess.ActorDataAccess:
         cSuccessMessage = "Records fetched successfully!".
         lSuccess = true.
     end method. /* getActorsByRole */
+    
+    
+    /*  REST Service to get actor's information after search
+        * input:
+        *           iActorId integer
+        * output:
+        *           dataset dsInfoActor
+        *           cSuccessMessage character
+        *           lSuccess logical
+    */
+    method public void getInfoById(input iActorId as integer, input-output dataset dsInfoActor, output cSuccessMessage as character, output lSuccess as logical):
+        empty temp-table ttInfoActor.
+        empty temp-table ttMoviesActor.
+        empty temp-table ttRolesActor.
+        
+        find first ibActor where ibActor.ActorId = iActorId no-lock.
+        create ttInfoActor.
+        buffer-copy ibActor to ttInfoActor.
+        
+        if available ibActor then do on error undo, throw:
+            if not locked ibActor then do on error undo, throw:
+                for each ibRole of ibActor no-lock on error undo, throw:
+                    create ttRolesActor.
+                    buffer-copy ibRole to ttRolesActor.
+                    
+                    for each ibMovie of ibRole no-lock on error undo, throw:
+                        create ttMoviesActor.
+                        buffer-copy ibMovie to ttMoviesActor.
+                    end. /* for each */
+                    
+                end. /* for each */
+            end. /* if not locked */
+            else do:
+                cSuccessMessage = "Error, record not available".
+                lSuccess = false.
+            end. /* else do */
+        end. /* if available */
+        else do:
+            cSuccessMessage = "Error, the record is used by someone else".
+            lSuccess = false.
+        end. /* else do */
+        
+    end method. /* getInfoById*/
     
     
 end class.

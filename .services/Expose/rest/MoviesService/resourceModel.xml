@@ -104,4 +104,14 @@
   <prgs:resource consumes="application/json" name="_addReviewToMovie_id" path="/addReviewToMovie" produces="application/json">
     <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/MoviePageBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.MoviePageBusiness..addReviewToMovie" produces="application/json" verb="POST"/>
   </prgs:resource>
+  <prgs:resource consumes="application/json" name="_actorInfo_id" path="/actorInfo/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/SearchActorBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.SearchActorBusiness..getActorInfoById" produces="application/json" verb="GET">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_movieInfo_id" path="/movieInfo/{id}" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Movies/.services/AppServer/BusinessLogic/SearchMovieBusiness.pidl::com.progress.openedge.pdt.bpmbindings" name="BusinessLogic.SearchMovieBusiness..getMovieInfoById" produces="application/json" verb="GET">
+      <prgs:param name="id" type="PATH"/>
+    </prgs:operation>
+  </prgs:resource>
 </prgs:model>

@@ -5,6 +5,32 @@
       <lm:details>
         <lm:adapterDetails>
           <lm:properties>
+            <lm:properties name="_actorInfo_id::BusinessLogic.SearchActorBusiness..getActorInfoById::GET">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;
+&lt;mapping:messageMapping xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:mapping=&quot;http://www.progress.com/caf/mapping1.0&quot; xmlns:metadata=&quot;http://www.progress.com/caf/mapping1.0/toolingMetadata&quot;>&#xD;
+  &lt;metadata:toolingMetadata xsi:type=&quot;metadata:toolingMetadata&quot;>&#xD;
+    &lt;metadata:mapInput>&#xD;
+      &lt;metadata:source/>&#xD;
+      &lt;metadata:target/>&#xD;
+    &lt;/metadata:mapInput>&#xD;
+    &lt;metadata:mapOutput>&#xD;
+      &lt;metadata:source/>&#xD;
+      &lt;metadata:target>&#xD;
+        &lt;metadata:mappablesData displayName=&quot;dsInfoActor&quot; expressionName=&quot;${json.object['response'].object['dsInfoActor']}&quot; mappableType=&quot;MANUAL&quot;/>&#xD;
+        &lt;metadata:mappablesData displayName=&quot;cSuccessMessage&quot; expressionName=&quot;${json.object['response'].string['cSuccessMessage']}&quot; mappableType=&quot;MANUAL&quot;/>&#xD;
+        &lt;metadata:mappablesData displayName=&quot;lSuccess&quot; expressionName=&quot;${json.object['response'].string['lSuccess']}&quot; mappableType=&quot;MANUAL&quot;/>&#xD;
+      &lt;/metadata:target>&#xD;
+    &lt;/metadata:mapOutput>&#xD;
+  &lt;/metadata:toolingMetadata>&#xD;
+  &lt;mapping:mapInput>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${rest.pathparam['/actorInfo/{id};id']}&quot; target=&quot;${idl.param['iActorId']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+  &lt;/mapping:mapInput>&#xD;
+  &lt;mapping:mapOutput>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['dsInfoActor']}&quot; target=&quot;${json.object['response'].object['dsInfoActor']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['cSuccessMessage']}&quot; target=&quot;${json.object['response'].string['cSuccessMessage']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['lSuccess']}&quot; target=&quot;${json.object['response'].string['lSuccess']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+  &lt;/mapping:mapOutput>&#xD;
+  &lt;mapping:mapFault name=&quot;default_fault&quot;/>&#xD;
+&lt;/mapping:messageMapping></lm:properties>
             <lm:properties name="_actors_getAllActors::Services.ActorService..addActor::POST">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;
 &lt;mapping:messageMapping xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:mapping=&quot;http://www.progress.com/caf/mapping1.0&quot; xmlns:metadata=&quot;http://www.progress.com/caf/mapping1.0/toolingMetadata&quot;>&#xD;
   &lt;metadata:toolingMetadata xsi:type=&quot;metadata:toolingMetadata&quot;>&#xD;
@@ -431,6 +457,32 @@
   &lt;mapping:mapOutput>&#xD;
     &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['ttGetAllMovies']}&quot; target=&quot;${json.object['response'].object['ttGetAllMovies']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
     &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['cSuccessMessage']}&quot; target=&quot;${json.object['response'].string['cSuccessMessage']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+  &lt;/mapping:mapOutput>&#xD;
+  &lt;mapping:mapFault name=&quot;default_fault&quot;/>&#xD;
+&lt;/mapping:messageMapping></lm:properties>
+            <lm:properties name="_movieInfo_id::BusinessLogic.SearchMovieBusiness..getMovieInfoById::GET">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;
+&lt;mapping:messageMapping xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:mapping=&quot;http://www.progress.com/caf/mapping1.0&quot; xmlns:metadata=&quot;http://www.progress.com/caf/mapping1.0/toolingMetadata&quot;>&#xD;
+  &lt;metadata:toolingMetadata xsi:type=&quot;metadata:toolingMetadata&quot;>&#xD;
+    &lt;metadata:mapInput>&#xD;
+      &lt;metadata:source/>&#xD;
+      &lt;metadata:target/>&#xD;
+    &lt;/metadata:mapInput>&#xD;
+    &lt;metadata:mapOutput>&#xD;
+      &lt;metadata:source/>&#xD;
+      &lt;metadata:target>&#xD;
+        &lt;metadata:mappablesData displayName=&quot;dsInfoMovie&quot; expressionName=&quot;${json.object['response'].object['dsInfoMovie']}&quot; mappableType=&quot;MANUAL&quot;/>&#xD;
+        &lt;metadata:mappablesData displayName=&quot;cSuccessMessage&quot; expressionName=&quot;${json.object['response'].string['cSuccessMessage']}&quot; mappableType=&quot;MANUAL&quot;/>&#xD;
+        &lt;metadata:mappablesData displayName=&quot;lSuccess&quot; expressionName=&quot;${json.object['response'].string['lSuccess']}&quot; mappableType=&quot;MANUAL&quot;/>&#xD;
+      &lt;/metadata:target>&#xD;
+    &lt;/metadata:mapOutput>&#xD;
+  &lt;/metadata:toolingMetadata>&#xD;
+  &lt;mapping:mapInput>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${rest.pathparam['/movieInfo/{id};id']}&quot; target=&quot;${idl.param['iMovieId']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+  &lt;/mapping:mapInput>&#xD;
+  &lt;mapping:mapOutput>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['dsInfoMovie']}&quot; target=&quot;${json.object['response'].object['dsInfoMovie']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['cSuccessMessage']}&quot; target=&quot;${json.object['response'].string['cSuccessMessage']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
+    &lt;mapping:rule action=&quot;None&quot; resource=&quot;&quot; source=&quot;${idl.param['lSuccess']}&quot; target=&quot;${json.object['response'].string['lSuccess']}&quot; type=&quot;INTERFACE_PARAM&quot;/>&#xD;
   &lt;/mapping:mapOutput>&#xD;
   &lt;mapping:mapFault name=&quot;default_fault&quot;/>&#xD;
 &lt;/mapping:messageMapping></lm:properties>

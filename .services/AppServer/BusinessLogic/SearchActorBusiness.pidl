@@ -3,6 +3,16 @@
 <pidl:types>
 </pidl:types>
   <pidl:interface name="com.progress.openedge.pdt.bpminterfaces">
+    <pidl:operation name="BusinessLogic.SearchActorBusiness..getActorInfoById" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="iActorId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:output messageLabel="dsInfoActor" req="false" type="java:Object">
+    </pidl:output>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
     <pidl:operation name="BusinessLogic.SearchActorBusiness..searchActors" pattern="http://www.progress.com/caf/idl1.0/request-response">
       <pidl:input messageLabel="cSearchCondition" req="false" type="java:String">
     </pidl:input>
@@ -25,6 +35,53 @@
   <wsad:ProcDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="true" IsMappedToSubmit="false">
     <wsad:Name>BusinessLogic.SearchActorBusiness</wsad:Name>
     <wsad:HelpString></wsad:HelpString>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>getActorInfoById</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>getActorInfoById</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>iActorId</wsad:Name>
+          <wsad:OrigName>iActorId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>dsInfoActor</wsad:Name>
+          <wsad:OrigName>dsInfoActor</wsad:OrigName>
+          <wsad:Type>36</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+          <wsad:DataSetMetaData>
+            <wsad:NamespaceUri xsi:nil="true"/>
+            <wsad:DataTable Name="ttInfoActor" hasBeforeTable="false"/>
+            <wsad:DataTable Name="ttMoviesActor" hasBeforeTable="false"/>
+            <wsad:DataTable Name="ttRolesActor" hasBeforeTable="false"/>
+            <wsad:DataLink Name="ActorRole" isNested="false" numFieldPairs="1">
+              <wsad:ParentBuffer>ttInfoActor</wsad:ParentBuffer>
+              <wsad:ChildBuffer>ttRolesActor</wsad:ChildBuffer>
+              <wsad:FieldPairs>ActorId,ActorId</wsad:FieldPairs>
+            </wsad:DataLink>
+            <wsad:DataLink Name="RoleMovie" isNested="false" numFieldPairs="1">
+              <wsad:ParentBuffer>ttRolesActor</wsad:ParentBuffer>
+              <wsad:ChildBuffer>ttMoviesActor</wsad:ChildBuffer>
+              <wsad:FieldPairs>MovieId,MovieId</wsad:FieldPairs>
+            </wsad:DataLink>
+          </wsad:DataSetMetaData>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="4" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
     <wsad:InternalProc isExcluded="false" hasBadParams="false">
       <wsad:Name>searchActors</wsad:Name>
       <wsad:ProcType>1</wsad:ProcType>

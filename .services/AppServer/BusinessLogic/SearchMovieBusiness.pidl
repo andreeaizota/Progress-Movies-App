@@ -15,6 +15,16 @@
       <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
     </pidl:output>
     </pidl:operation>
+    <pidl:operation name="BusinessLogic.SearchMovieBusiness..getMovieInfoById" pattern="http://www.progress.com/caf/idl1.0/request-response">
+      <pidl:input messageLabel="iMovieId" req="false" type="java:Integer">
+    </pidl:input>
+      <pidl:output messageLabel="dsInfoMovie" req="false" type="java:Object">
+    </pidl:output>
+      <pidl:output messageLabel="cSuccessMessage" req="false" type="java:String">
+    </pidl:output>
+      <pidl:output messageLabel="lSuccess" req="false" type="java:Boolean">
+    </pidl:output>
+    </pidl:operation>
     <pidl:operation name="BusinessLogic.SearchMovieBusiness..searchMovies" pattern="http://www.progress.com/caf/idl1.0/request-response">
       <pidl:input messageLabel="cName" req="false" type="java:String">
     </pidl:input>
@@ -66,6 +76,88 @@
           <wsad:Mode>2</wsad:Mode>
         </wsad:Parameter>
         <wsad:Parameter allowUnknown="true" ordinal="5" writeXmlBeforeImage="false">
+          <wsad:Name>lSuccess</wsad:Name>
+          <wsad:OrigName>lSuccess</wsad:OrigName>
+          <wsad:Type>3</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+      </wsad:MethodDetail>
+    </wsad:InternalProc>
+    <wsad:InternalProc isExcluded="false" hasBadParams="false">
+      <wsad:Name>getMovieInfoById</wsad:Name>
+      <wsad:ProcType>1</wsad:ProcType>
+      <wsad:MethodDetail isCustomized="false" usesUnknownDefault="true" useRetVal="false" usesTTMappingDefault="true" IsTTResultSet="true" usesBeforeImageDefault="false" IsMappedToSubmit="false">
+        <wsad:Name>getMovieInfoById</wsad:Name>
+        <wsad:Parameter allowUnknown="true" ordinal="1" writeXmlBeforeImage="false">
+          <wsad:Name>iMovieId</wsad:Name>
+          <wsad:OrigName>iMovieId</wsad:OrigName>
+          <wsad:Type>4</wsad:Type>
+          <wsad:Mode>1</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="2" writeXmlBeforeImage="false">
+          <wsad:Name>dsInfoMovie</wsad:Name>
+          <wsad:OrigName>dsInfoMovie</wsad:OrigName>
+          <wsad:Type>36</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+          <wsad:DataSetMetaData>
+            <wsad:NamespaceUri xsi:nil="true"/>
+            <wsad:DataTable Name="ttInfoMovie" hasBeforeTable="false"/>
+            <wsad:DataTable Name="ttActorsMovie" hasBeforeTable="false"/>
+            <wsad:DataTable Name="ttRolesMovie" hasBeforeTable="false"/>
+            <wsad:DataTable Name="ttDirectorsMovie" hasBeforeTable="false">
+              <wsad:MetaData>
+                <wsad:FieldName>DirectorId</wsad:FieldName>
+                <wsad:Type>4</wsad:Type>
+                <wsad:Extent>0</wsad:Extent>
+                <wsad:TypeName>INTEGER</wsad:TypeName>
+                <wsad:XmlNodeType>0</wsad:XmlNodeType>
+              </wsad:MetaData>
+              <wsad:MetaData>
+                <wsad:FieldName>FirstName</wsad:FieldName>
+                <wsad:Type>1</wsad:Type>
+                <wsad:Extent>0</wsad:Extent>
+                <wsad:TypeName>CHARACTER</wsad:TypeName>
+                <wsad:XmlNodeType>0</wsad:XmlNodeType>
+              </wsad:MetaData>
+              <wsad:MetaData>
+                <wsad:FieldName>LastName</wsad:FieldName>
+                <wsad:Type>1</wsad:Type>
+                <wsad:Extent>0</wsad:Extent>
+                <wsad:TypeName>CHARACTER</wsad:TypeName>
+                <wsad:XmlNodeType>0</wsad:XmlNodeType>
+              </wsad:MetaData>
+              <wsad:MetaData>
+                <wsad:FieldName>MovieId</wsad:FieldName>
+                <wsad:Type>4</wsad:Type>
+                <wsad:Extent>0</wsad:Extent>
+                <wsad:TypeName>INTEGER</wsad:TypeName>
+                <wsad:XmlNodeType>0</wsad:XmlNodeType>
+              </wsad:MetaData>
+            </wsad:DataTable>
+            <wsad:DataLink Name="MovieRole" isNested="false" numFieldPairs="1">
+              <wsad:ParentBuffer>ttInfoMovie</wsad:ParentBuffer>
+              <wsad:ChildBuffer>ttRolesMovie</wsad:ChildBuffer>
+              <wsad:FieldPairs>MovieId,MovieId</wsad:FieldPairs>
+            </wsad:DataLink>
+            <wsad:DataLink Name="RoleActor" isNested="false" numFieldPairs="1">
+              <wsad:ParentBuffer>ttRolesMovie</wsad:ParentBuffer>
+              <wsad:ChildBuffer>ttActorsMovie</wsad:ChildBuffer>
+              <wsad:FieldPairs>ActorId,ActorId</wsad:FieldPairs>
+            </wsad:DataLink>
+            <wsad:DataLink Name="MovieDirector" isNested="false" numFieldPairs="1">
+              <wsad:ParentBuffer>ttInfoMovie</wsad:ParentBuffer>
+              <wsad:ChildBuffer>ttDirectorsMovie</wsad:ChildBuffer>
+              <wsad:FieldPairs>MovieId,MovieId</wsad:FieldPairs>
+            </wsad:DataLink>
+          </wsad:DataSetMetaData>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="3" writeXmlBeforeImage="false">
+          <wsad:Name>cSuccessMessage</wsad:Name>
+          <wsad:OrigName>cSuccessMessage</wsad:OrigName>
+          <wsad:Type>1</wsad:Type>
+          <wsad:Mode>2</wsad:Mode>
+        </wsad:Parameter>
+        <wsad:Parameter allowUnknown="true" ordinal="4" writeXmlBeforeImage="false">
           <wsad:Name>lSuccess</wsad:Name>
           <wsad:OrigName>lSuccess</wsad:OrigName>
           <wsad:Type>3</wsad:Type>

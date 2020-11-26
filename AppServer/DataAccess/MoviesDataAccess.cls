@@ -20,6 +20,8 @@ class DataAccess.MoviesDataAccess:
     define buffer ibActor for Actor.
     define buffer ibAMG for AMG.
     define buffer ibGenre for Genre.
+    define buffer ibAMD for AMD.
+    define buffer ibDirector for Director.
         
     
     /* Defining internal temp tables and datasets */
@@ -30,6 +32,24 @@ class DataAccess.MoviesDataAccess:
     define temp-table ttGetByRatingMovies like Movie.
     define temp-table ttGetByGenreMovies like Movie.
     
+    define temp-table ttInfoMovie like Movie.
+    define temp-table ttActorsMovie like Actor.
+    define temp-table ttRolesMovie like Role.
+    define temp-table ttDirectorsMovie
+        field DirectorId as integer
+        field FirstName as character
+        field LastName as character
+        field MovieId as integer
+        index idxDirectorId is primary DirectorId
+        index idxMovieId MovieId.
+    
+    define dataset dsInfoMovie for ttInfoMovie, ttActorsMovie, ttRolesMovie, ttDirectorsMovie
+        data-relation MovieRole for ttInfoMovie, ttRolesMovie
+        relation-fields (MovieId, MovieId) nested
+        data-relation RoleActor for ttRolesMovie, ttActorsMovie
+        relation-fields (ActorId, ActorId) nested
+        data-relation MovieDirector for ttInfoMovie, ttDirectorsMovie
+        relation-fields (MovieId, MovieId) nested.
     
     /* Default constructor */    
     constructor public MoviesDataAccess (  ):
@@ -46,6 +66,11 @@ class DataAccess.MoviesDataAccess:
         empty temp-table ttGetByNameOrActorMovies.
         empty temp-table ttGetByGenreMovies.
         empty temp-table ttGetByRatingMovies.
+        
+        empty temp-table ttInfoMovie.
+        empty temp-table ttActorsMovie.
+        empty temp-table ttRolesMovie.
+        empty temp-table ttDirectorsMovie.
 	end destructor.
     
     
@@ -314,4 +339,57 @@ class DataAccess.MoviesDataAccess:
         end. /* else do */
     end method. /* updateRating */    
     
+    
+    /*  REST Service to get movie's information after search
+        * input:
+        *           iMovieId integer
+        * output:
+        *           dataset dsInfoMovie
+        *           cSuccessMessage character
+        *           lSuccess logical
+    */
+    method public void getInfoById(input iMovieId as integer, input-output dataset dsInfoMovie, output cSuccessMessage as character, output lSuccess as logical):
+        empty temp-table ttInfoMovie.
+        empty temp-table ttActorsMovie.
+        empty temp-table ttRolesMovie.
+        empty temp-table ttDirectorsMovie.
+        
+        find first ibMovie where ibMovie.MovieId = iMovieId no-lock.
+        create ttInfoMovie.
+        buffer-copy ibMovie to ttInfoMovie.
+        
+        if available ibMovie then do on error undo, throw:
+            if not locked ibMovie then do on error undo, throw:
+                for each ibRole of ibMovie no-lock on error undo, throw:
+                    create ttRolesMovie.
+                    buffer-copy ibRole to ttRolesMovie.
+                    
+                    for each ibActor of ibRole no-lock on error undo, throw:
+                        create ttActorsMovie.
+                        buffer-copy ibActor to ttActorsMovie.
+                    end. /* for each */
+                    
+                end. /* for each */
+                
+                for each ibAMD of ibMovie no-lock, each ibDirector of ibAMD no-lock on error undo, throw:
+                    create ttDirectorsMovie.
+                    assign 
+                        ttDirectorsMovie.MovieId = ibMovie.MovieId
+                        ttDirectorsMovie.DirectorId = ibDirector.DirectorId
+                        ttDirectorsMovie.FirstName = ibDirector.FirstName
+                        ttDirectorsMovie.LastName = ibDirector.LastName.
+                end. /* for each */
+                    
+            end. /* if not locked */
+            else do:
+                cSuccessMessage = "Error, record not available".
+                lSuccess = false.
+            end. /* else do */
+        end. /* if available */
+        else do:
+            cSuccessMessage = "Error, the record is used by someone else".
+            lSuccess = false.
+        end. /* else do */
+        
+    end method. /* getInfoById*/
 end class.

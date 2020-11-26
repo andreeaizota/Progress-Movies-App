@@ -28,6 +28,25 @@ class BusinessLogic.SearchMovieBusiness:
     define temp-table ttFilteredMovies like Movie.
     define temp-table ttMoviesByRating like Movie.
     define temp-table ttMoviesByGenre like Movie.
+    
+    define temp-table ttInfoMovie like Movie.
+    define temp-table ttActorsMovie like Actor.
+    define temp-table ttRolesMovie like Role.
+    define temp-table ttDirectorsMovie
+        field DirectorId as integer
+        field FirstName as character
+        field LastName as character
+        field MovieId as integer
+        index idxDirectorId is primary DirectorId
+        index idxMovieId MovieId.
+    
+    define dataset dsInfoMovie for ttInfoMovie, ttActorsMovie, ttRolesMovie, ttDirectorsMovie
+        data-relation MovieRole for ttInfoMovie, ttRolesMovie
+        relation-fields (MovieId, MovieId) nested
+        data-relation RoleActor for ttRolesMovie, ttActorsMovie
+        relation-fields (ActorId, ActorId) nested
+        data-relation MovieDirector for ttInfoMovie, ttDirectorsMovie
+        relation-fields (MovieId, MovieId) nested.
         
      
     /* Default constructor */      
@@ -48,6 +67,11 @@ class BusinessLogic.SearchMovieBusiness:
         empty temp-table ttFilteredMovies.
         empty temp-table ttMoviesByRating.
         empty temp-table ttMoviesByGenre.
+        
+        empty temp-table ttInfoMovie.
+        empty temp-table ttActorsMovie.
+        empty temp-table ttRolesMovie.
+        empty temp-table ttDirectorsMovie.
     end destructor.
    
    
@@ -116,4 +140,24 @@ class BusinessLogic.SearchMovieBusiness:
         end. /* else */
     end method.
 
+        
+    /*  API to get information for a movie (details, roles, movies, directors)
+        * input:
+        *           iMovieId integer
+        * output:
+        *           dataset dsInfoActor
+        *           cSuccessMessage character
+        *           lSuccess logical
+    */
+    @openapi.openedge.export(type="REST", useReturnValue="false", writeDataSetBeforeImage="false").
+    method public void getMovieInfoById(input iMovieId as integer, output dataset dsInfoMovie, output cSuccessMessage as character, output lSuccess as logical):
+        ioMoviesDataAccess:getInfoById(iMovieId, dataset dsInfoMovie by-reference, cSuccessMessage, lSuccess).
+        
+        /* Catch if an errror occurs when copying data for movie's info */
+        catch eSysError as Progress.Lang.Error:
+            message "ERROR Fetch info for movie: error ocured when copying data.".
+            cSuccessMessage = "Error, records not fetched! (movie's info)".
+            lSuccess = false.
+        end catch.
+    end method. /* getMovieInfoById */
 end class.

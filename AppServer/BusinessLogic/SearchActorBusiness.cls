@@ -26,6 +26,15 @@ class BusinessLogic.SearchActorBusiness:
     define temp-table ttActorsByMovie like Actor.
     define temp-table ttActorsByRole like Actor.
     define temp-table ttActors like Actor.
+    define temp-table ttInfoActor like Actor.
+    define temp-table ttMoviesActor like Movie.
+    define temp-table ttRolesActor like Role.
+    
+    define dataset dsInfoActor for ttInfoActor, ttMoviesActor, ttRolesActor
+        data-relation ActorRole for ttInfoActor, ttRolesActor
+        relation-fields (ActorId, ActorId) nested
+        data-relation RoleMovie for ttRolesActor, ttMoviesActor
+        relation-fields (MovieId, MovieId) nested.
           
           
     /* Default constructor */     
@@ -43,6 +52,9 @@ class BusinessLogic.SearchActorBusiness:
         empty temp-table ttActorsByMovie.
         empty temp-table ttActorsByRole.
         empty temp-table ttActors.
+        empty temp-table ttInfoActor.
+        empty temp-table ttMoviesActor.
+        empty temp-table ttRolesActor.
     end destructor.
 
     
@@ -74,5 +86,26 @@ class BusinessLogic.SearchActorBusiness:
             end. /* otherwisw do */
         end case.
     end method. /* searchActors */
+    
+    
+    /*  API to get information for an actor (details, roles,movies)
+        * input:
+        *           iActorId integer
+        * output:
+        *           dataset dsInfoActor
+        *           cSuccessMessage character
+        *           lSuccess logical
+    */
+    @openapi.openedge.export(type="REST", useReturnValue="false", writeDataSetBeforeImage="false").
+    method public void getActorInfoById(input iActorId as integer, output dataset dsInfoActor, output cSuccessMessage as character, output lSuccess as logical):
+        ioActorDataAccess:getInfoById(iActorId, dataset dsInfoActor by-reference, cSuccessMessage, lSuccess).
+        
+        /* Catch if an errror occurs when copying data for actor's info */
+        catch eSysError as Progress.Lang.Error:
+            message "ERROR Fetch info for actor: error ocured when copying data.".
+            cSuccessMessage = "Error, records not fetched! (actor's info)".
+            lSuccess = false.
+        end catch.
+    end method. /* getActorInfoById */
     
 end class.
