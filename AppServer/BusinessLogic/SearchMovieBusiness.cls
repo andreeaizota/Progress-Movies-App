@@ -32,6 +32,7 @@ class BusinessLogic.SearchMovieBusiness:
     define temp-table ttInfoMovie like Movie.
     define temp-table ttActorsMovie like Actor.
     define temp-table ttRolesMovie like Role.
+    define temp-table ttReviewsMovie like Review.
     define temp-table ttDirectorsMovie
         field DirectorId as integer
         field FirstName as character
@@ -40,12 +41,14 @@ class BusinessLogic.SearchMovieBusiness:
         index idxDirectorId is primary DirectorId
         index idxMovieId MovieId.
     
-    define dataset dsInfoMovie for ttInfoMovie, ttActorsMovie, ttRolesMovie, ttDirectorsMovie
+    define dataset dsInfoMovie for ttInfoMovie, ttActorsMovie, ttRolesMovie, ttDirectorsMovie, ttReviewsMovie
         data-relation MovieRole for ttInfoMovie, ttRolesMovie
         relation-fields (MovieId, MovieId) nested
         data-relation RoleActor for ttRolesMovie, ttActorsMovie
         relation-fields (ActorId, ActorId) nested
         data-relation MovieDirector for ttInfoMovie, ttDirectorsMovie
+        relation-fields (MovieId, MovieId) nested
+        data-relation MovieRevier for ttInfoMovie, ttReviewsMovie
         relation-fields (MovieId, MovieId) nested.
         
      

@@ -22,6 +22,7 @@ class DataAccess.MoviesDataAccess:
     define buffer ibGenre for Genre.
     define buffer ibAMD for AMD.
     define buffer ibDirector for Director.
+    define buffer ibReview for Review.
         
     
     /* Defining internal temp tables and datasets */
@@ -35,6 +36,7 @@ class DataAccess.MoviesDataAccess:
     define temp-table ttInfoMovie like Movie.
     define temp-table ttActorsMovie like Actor.
     define temp-table ttRolesMovie like Role.
+    define temp-table ttReviewsMovie like Review.
     define temp-table ttDirectorsMovie
         field DirectorId as integer
         field FirstName as character
@@ -43,12 +45,14 @@ class DataAccess.MoviesDataAccess:
         index idxDirectorId is primary DirectorId
         index idxMovieId MovieId.
     
-    define dataset dsInfoMovie for ttInfoMovie, ttActorsMovie, ttRolesMovie, ttDirectorsMovie
+    define dataset dsInfoMovie for ttInfoMovie, ttActorsMovie, ttRolesMovie, ttDirectorsMovie, ttReviewsMovie
         data-relation MovieRole for ttInfoMovie, ttRolesMovie
         relation-fields (MovieId, MovieId) nested
         data-relation RoleActor for ttRolesMovie, ttActorsMovie
         relation-fields (ActorId, ActorId) nested
         data-relation MovieDirector for ttInfoMovie, ttDirectorsMovie
+        relation-fields (MovieId, MovieId) nested
+        data-relation MovieRevier for ttInfoMovie, ttReviewsMovie
         relation-fields (MovieId, MovieId) nested.
     
     /* Default constructor */    
@@ -70,7 +74,8 @@ class DataAccess.MoviesDataAccess:
         empty temp-table ttInfoMovie.
         empty temp-table ttActorsMovie.
         empty temp-table ttRolesMovie.
-        empty temp-table ttDirectorsMovie.
+        empty temp-table ttDirectorsMovie. 
+        empty temp-table ttReviewsMovie.
 	end destructor.
     
     
@@ -353,6 +358,7 @@ class DataAccess.MoviesDataAccess:
         empty temp-table ttActorsMovie.
         empty temp-table ttRolesMovie.
         empty temp-table ttDirectorsMovie.
+        empty temp-table ttReviewsMovie.
         
         find first ibMovie where ibMovie.MovieId = iMovieId no-lock.
         create ttInfoMovie.
@@ -378,6 +384,11 @@ class DataAccess.MoviesDataAccess:
                         ttDirectorsMovie.DirectorId = ibDirector.DirectorId
                         ttDirectorsMovie.FirstName = ibDirector.FirstName
                         ttDirectorsMovie.LastName = ibDirector.LastName.
+                end. /* for each */
+                
+                for each ibReview of ibMovie no-lock on error undo, throw:
+                    create ttReviewsMovie.
+                    buffer-copy ibReview to ttReviewsMovie.
                 end. /* for each */
                     
             end. /* if not locked */

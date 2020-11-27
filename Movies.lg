@@ -1445,3 +1445,96 @@
 [2020/11/26@19:19:38.623+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
 [2020/11/26@19:19:38.625+0200] P-10780      T-16472 I SRV     2: (17961) User 23 set tty to aIzota-Lap. 
 [2020/11/26@19:19:38.640+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
+[2020/11/26@21:40:17.250+0200] P-14252      T-13104 I SRV     3: (452)   Login by SYSTEM on CON:. 
+[2020/11/26@21:40:17.263+0200] P-14252      T-13104 I SRV     3: (5646)  Started on port 3003 using TCP IPV4 address 127.0.0.1, pid 14252. 
+[2020/11/26@21:40:18.215+0200] P-14252      T-13104 I SRV     3: (742)   Login usernum 22, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/26@21:40:18.216+0200] P-14252      T-13104 I SRV     3: (7129)  Usr 22 set name to SYSTEM. 
+[2020/11/26@21:40:18.217+0200] P-14252      T-13104 I SRV     3: (17961) User 22 set tty to aIzota-Lap. 
+[2020/11/26@21:40:18.239+0200] P-14252      T-13104 I SRV     3: (7129)  Usr 22 set name to SYSTEM. 
+[2020/11/26@22:02:39.300+0200] P-9652       T-16432 I SRV     4: (452)   Login by SYSTEM on CON:. 
+[2020/11/26@22:02:39.317+0200] P-9652       T-16432 I SRV     4: (5646)  Started on port 3005 using TCP IPV4 address 127.0.0.1, pid 9652. 
+[2020/11/26@22:02:40.264+0200] P-9652       T-16432 I SRV     4: (742)   Login usernum 21, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/26@22:02:40.264+0200] P-9652       T-16432 I SRV     4: (7129)  Usr 21 set name to SYSTEM. 
+[2020/11/26@22:02:40.265+0200] P-9652       T-16432 I SRV     4: (17961) User 21 set tty to aIzota-Lap. 
+[2020/11/26@22:02:40.277+0200] P-9652       T-16432 I SRV     4: (7129)  Usr 21 set name to SYSTEM. 
+[2020/11/26@22:59:21.604+0200] P-11500      T-12420 I SRV     1: (739)   Logout usernum 24, userid aIzota, on aIzota-Lap. 
+[2020/11/26@22:59:37.099+0200] P-16464      T-3940  I FMAGENT 6: (8848)  Connection to Admin Server lost. 
+[2020/11/26@22:59:37.104+0200] P-16464      T-3940  I FMAGENT 6: (14262) Successfully connected to AdminServer on port 8846 using TCP/IP IPv4 address 192.168.0.151. 
+[2020/11/26@22:59:37.186+0200] P-12908      T-6356  I BROKER  0: (8848)  Connection to Admin Server lost. 
+[2020/11/26@22:59:37.214+0200] P-9652       T-16432 I SRV     4: (739)   Logout usernum 21, userid SYSTEM, on aIzota-Lap. 
+[2020/11/26@22:59:37.221+0200] P-10780      T-16472 I SRV     2: (739)   Logout usernum 23, userid SYSTEM, on aIzota-Lap. 
+[2020/11/26@22:59:37.291+0200] P-16464      T-3940  I FMAGENT 6: (8846)  Registered with Admin Server. 
+[2020/11/26@22:59:37.385+0200] P-14252      T-13104 I SRV     3: (794)   Usernum 22 terminated abnormally. 
+[2020/11/26@22:59:37.386+0200] P-14252      T-13104 I SRV     3: (739)   Logout usernum 22, userid SYSTEM, on aIzota-Lap. 
+[2020/11/26@22:59:37.811+0200] P-12908      T-6356  I BROKER  0: (14262) Successfully connected to AdminServer on port 7846 using TCP/IP IPV4 address 192.168.0.151. 
+[2020/11/26@22:59:37.834+0200] P-12908      T-6356  I BROKER  0: (8846)  Registered with Admin Server. 
+[2020/11/27@08:10:18.960+0200] P-16464      T-3940  I FMAGENT 6: (8848)  Connection to Admin Server lost. 
+
+                Fri Nov 27 08:10:19 2020
+[2020/11/27@08:10:18.963+0200] P-12908      T-6356  I BROKER  0: (8848)  Connection to Admin Server lost. 
+[2020/11/27@08:10:19.095+0200] P-16464      T-3940  I FMAGENT 6: (14262) Successfully connected to AdminServer on port 8846 using TCP/IP IPv4 address 127.0.0.1. 
+[2020/11/27@08:10:19.705+0200] P-16464      T-3940  I FMAGENT 6: (8846)  Registered with Admin Server. 
+[2020/11/27@08:10:19.721+0200] P-12908      T-6356  I BROKER  0: (14262) Successfully connected to AdminServer on port 7846 using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@08:10:19.841+0200] P-12908      T-6356  I BROKER  0: (8846)  Registered with Admin Server. 
+[2020/11/27@08:50:04.833+0200] P-11500      T-12420 I SRV     1: (742)   Login usernum 24, userid SYSTEM client type PASA, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@08:50:04.834+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@08:50:04.834+0200] P-11500      T-12420 I SRV     1: (17961) User 24 set tty to aIzota-Lap. 
+[2020/11/27@08:50:04.841+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@08:50:04.843+0200] P-11500      T-12420 I SRV     1: (739)   Logout usernum 24, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@08:50:05.190+0200] P-11500      T-12420 I SRV     1: (742)   Login usernum 24, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@08:50:05.192+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@08:50:05.193+0200] P-11500      T-12420 I SRV     1: (17961) User 24 set tty to aIzota-Lap. 
+[2020/11/27@08:50:05.220+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@08:50:05.319+0200] P-10780      T-16472 I SRV     2: (742)   Login usernum 23, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@08:50:05.319+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
+[2020/11/27@08:50:05.319+0200] P-10780      T-16472 I SRV     2: (17961) User 23 set tty to aIzota-Lap. 
+[2020/11/27@08:50:05.329+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
+[2020/11/27@08:50:14.523+0200] P-14252      T-13104 I SRV     3: (742)   Login usernum 22, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@08:50:14.524+0200] P-14252      T-13104 I SRV     3: (7129)  Usr 22 set name to SYSTEM. 
+[2020/11/27@08:50:14.525+0200] P-14252      T-13104 I SRV     3: (17961) User 22 set tty to aIzota-Lap. 
+[2020/11/27@08:50:14.533+0200] P-14252      T-13104 I SRV     3: (7129)  Usr 22 set name to SYSTEM. 
+[2020/11/27@10:04:18.237+0200] P-9652       T-16432 I SRV     4: (742)   Login usernum 21, userid aIzota client type ABL , on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@10:04:18.238+0200] P-9652       T-16432 I SRV     4: (7129)  Usr 21 set name to aIzota. 
+[2020/11/27@10:04:18.238+0200] P-9652       T-16432 I SRV     4: (17961) User 21 set tty to aIzota-Lap. 
+[2020/11/27@10:04:18.249+0200] P-9652       T-16432 I SRV     4: (7129)  Usr 21 set name to aIzota. 
+[2020/11/27@10:32:45.121+0200] P-12908      T-6356  I BROKER  0: (8839)  No SQL servers are available.  Try again later. 
+[2020/11/27@12:38:39.997+0200] P-14252      T-13104 I SRV     3: (739)   Logout usernum 22, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@12:38:40.011+0200] P-11500      T-12420 I SRV     1: (739)   Logout usernum 24, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@12:38:40.012+0200] P-10780      T-16472 I SRV     2: (739)   Logout usernum 23, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@12:42:42.455+0200] P-12908      T-6356  I BROKER  0: (8839)  No SQL servers are available.  Try again later. 
+[2020/11/27@12:43:11.745+0200] P-11500      T-12420 I SRV     1: (742)   Login usernum 24, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@12:43:11.746+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@12:43:11.747+0200] P-11500      T-12420 I SRV     1: (17961) User 24 set tty to aIzota-Lap. 
+[2020/11/27@12:43:11.763+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@13:44:56.769+0200] P-10780      T-16472 I SRV     2: (742)   Login usernum 23, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@13:44:56.769+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
+[2020/11/27@13:44:56.769+0200] P-10780      T-16472 I SRV     2: (17961) User 23 set tty to aIzota-Lap. 
+[2020/11/27@13:44:56.782+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
+[2020/11/27@13:48:02.589+0200] P-14252      T-13104 I SRV     3: (742)   Login usernum 22, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@13:48:02.590+0200] P-14252      T-13104 I SRV     3: (7129)  Usr 22 set name to SYSTEM. 
+[2020/11/27@13:48:02.590+0200] P-14252      T-13104 I SRV     3: (17961) User 22 set tty to aIzota-Lap. 
+[2020/11/27@13:48:02.606+0200] P-14252      T-13104 I SRV     3: (7129)  Usr 22 set name to SYSTEM. 
+[2020/11/27@14:12:49.139+0200] P-11500      T-12420 I SRV     1: (742)   Login usernum 20, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@14:12:49.140+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 20 set name to SYSTEM. 
+[2020/11/27@14:12:49.140+0200] P-11500      T-12420 I SRV     1: (17961) User 20 set tty to aIzota-Lap. 
+[2020/11/27@14:12:49.148+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 20 set name to SYSTEM. 
+[2020/11/27@15:31:53.682+0200] P-11500      T-12420 I SRV     1: (739)   Logout usernum 20, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@15:31:53.683+0200] P-14252      T-13104 I SRV     3: (739)   Logout usernum 22, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@15:31:53.683+0200] P-11500      T-12420 I SRV     1: (739)   Logout usernum 24, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@15:31:53.848+0200] P-10780      T-16472 I SRV     2: (794)   Usernum 23 terminated abnormally. 
+[2020/11/27@15:31:53.850+0200] P-10780      T-16472 I SRV     2: (739)   Logout usernum 23, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@15:50:09.040+0200] P-12908      T-6356  I BROKER  0: (8839)  No SQL servers are available.  Try again later. 
+[2020/11/27@15:50:09.256+0200] P-12908      T-6356  I BROKER  0: (8839)  No SQL servers are available.  Try again later. 
+[2020/11/27@15:50:29.086+0200] P-11500      T-12420 I SRV     1: (742)   Login usernum 24, userid SYSTEM client type PASA, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@15:50:29.086+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@15:50:29.087+0200] P-11500      T-12420 I SRV     1: (17961) User 24 set tty to aIzota-Lap. 
+[2020/11/27@15:50:29.095+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@15:50:29.098+0200] P-11500      T-12420 I SRV     1: (739)   Logout usernum 24, userid SYSTEM, on aIzota-Lap. 
+[2020/11/27@15:50:29.292+0200] P-11500      T-12420 I SRV     1: (742)   Login usernum 24, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@15:50:29.292+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@15:50:29.293+0200] P-11500      T-12420 I SRV     1: (17961) User 24 set tty to aIzota-Lap. 
+[2020/11/27@15:50:29.302+0200] P-11500      T-12420 I SRV     1: (7129)  Usr 24 set name to SYSTEM. 
+[2020/11/27@15:50:29.593+0200] P-10780      T-16472 I SRV     2: (742)   Login usernum 23, userid SYSTEM client type PASN, on aIzota-Lap using TCP/IP IPV4 address 127.0.0.1. 
+[2020/11/27@15:50:29.593+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
+[2020/11/27@15:50:29.594+0200] P-10780      T-16472 I SRV     2: (17961) User 23 set tty to aIzota-Lap. 
+[2020/11/27@15:50:29.603+0200] P-10780      T-16472 I SRV     2: (7129)  Usr 23 set name to SYSTEM. 
